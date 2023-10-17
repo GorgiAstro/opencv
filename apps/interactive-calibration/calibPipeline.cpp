@@ -54,6 +54,7 @@ PipelineExitStatus CalibPipeline::start(std::vector<cv::Ptr<FrameProcessor> > pr
             }
             mCapture.set(cv::CAP_PROP_AUTOFOCUS, 0);
             mCapture.set(cv::CAP_PROP_FOCUS, 0);
+            mCapture.set(cv::CAP_PROP_FOURCC, cv::VideoWriter::fourcc('M', 'J', 'P', 'G'));
         }
         else if (mCaptureParams.source == File)
             mCapture.open(mCaptureParams.videoFileName);
